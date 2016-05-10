@@ -21,6 +21,11 @@ The following list of features are deprecated in Engine.
 
 The docker login command is removing the ability to automatically register for an account with the target registry if the given username doesn't exist. Due to this change, the email flag is no longer required, and will be deprecated.
 
+### Separator (`:`) of `--security-opt` flag on `docker run`
+**Deprecated In Release: v1.11**
+
+**Target For Removal In Release: v1.13**
+
 The flag `--security-opt` doesn't use the colon separator(`:`) anymore to divide keys and values, it uses the equal symbol(`=`) for consinstency with other similar flags, like `--storage-opt`.
 
 ### Ambiguous event fields in API
@@ -48,7 +53,7 @@ defining it at container creation (`POST /containers/create`).
 
 **Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 
-**Target For Removal In Release: v1.12**
+**Removed In Release: v1.12**
 
 The `docker ps --before` and `docker ps --since` options are deprecated.
 Use `docker ps --filter=before=...` and `docker ps --filter=since=...` instead.
@@ -140,9 +145,9 @@ Version 1.9 adds a flag (`--disable-legacy-registry=false`) which prevents the d
 ### Docker Content Trust ENV passphrase variables name change
 **Deprecated In Release: v1.9**
 
-**Target For Removal In Release: v1.10**
+**Removed In Release: v1.12**
 
-As of 1.9, Docker Content Trust Offline key will be renamed to Root key and the Tagging key will be renamed to Repository key. Due to this renaming, we're also changing the corresponding environment variables
+Since 1.9, Docker Content Trust Offline key has been renamed to Root key and the Tagging key has been renamed to Repository key. Due to this renaming, we're also changing the corresponding environment variables
 
-- DOCKER_CONTENT_TRUST_OFFLINE_PASSPHRASE will now be named DOCKER_CONTENT_TRUST_ROOT_PASSPHRASE
-- DOCKER_CONTENT_TRUST_TAGGING_PASSPHRASE will now be named DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE
+- DOCKER_CONTENT_TRUST_OFFLINE_PASSPHRASE is now named DOCKER_CONTENT_TRUST_ROOT_PASSPHRASE
+- DOCKER_CONTENT_TRUST_TAGGING_PASSPHRASE is now named DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE
